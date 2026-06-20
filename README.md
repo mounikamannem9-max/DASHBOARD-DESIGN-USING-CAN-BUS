@@ -18,7 +18,7 @@ The Main Node receives fuel information from the Fuel Node, monitors engine temp
 * Real-Time LCD Display
 * External Interrupt-Based Switching
 * Automotive ECU Communication Simulation
-* 
+  
 # System Architecture
 Fuel Node → CAN Bus → Main Node → CAN Bus → Indicator Node
 # Main Node
@@ -28,7 +28,7 @@ Fuel Node → CAN Bus → Main Node → CAN Bus → Indicator Node
 * Displays temperature and fuel level on LCD
 * Detects left and right indicator switch presses
 * Sends indicator commands through CAN
-* 
+ 
 # Fuel Node
 
 * Reads fuel sensor using ADC
@@ -47,12 +47,11 @@ Fuel Node → CAN Bus → Main Node → CAN Bus → Indicator Node
 * LPC2129 ARM7 Microcontroller
 * MCP2551 CAN Transceiver
 * DS18B20 Temperature Sensor
-* 16x2 LCD Display
+* 20x4 LCD Display
 * Fuel Sensor / Potentiometer
 * Push Buttons
 * LED Array
 * CAN Bus Network
-* USB-UART Programmer
   
 # Indicator Commands
 
@@ -75,8 +74,7 @@ Fuel Node → CAN Bus → Main Node → CAN Bus → Indicator Node
    
 # Expected Output
 
-# Dashboard Display
-
+<img width="1600" height="725" alt="WhatsApp Image 2026-06-19 at 16 24 45" src="https://github.com/user-attachments/assets/a25a870d-a1c5-4ea3-ab68-747536943ed4" />
 
 
 # Indicator Node
