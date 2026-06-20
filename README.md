@@ -6,6 +6,7 @@ The system consists of three independent CAN nodes:
 * Main Node
 * Fuel Node
 * Indicator Node
+  
 The Main Node receives fuel information from the Fuel Node, monitors engine temperature using a DS18B20 sensor, and sends indicator commands to the Indicator Node.
 # Block diagram
 <img width="643" height="459" alt="image" src="https://github.com/user-attachments/assets/c1a458f1-651b-46d0-87d2-5731203adf7d" />
