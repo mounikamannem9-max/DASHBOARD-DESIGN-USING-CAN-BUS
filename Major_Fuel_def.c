@@ -28,14 +28,9 @@
 f32 aR1;            // Reserved for analog calculations
 u32 adcdval;        // Raw ADC value
 u8 fuel;            // Fuel percentage
-
 f32 voltage;        // ADC voltage value
-
 CANF txF;           // CAN Transmit Frame
 
-/*****************************************************************************
- * Main Function
- *****************************************************************************/
 int main(void)
 {
     /* Initialize CAN Controller */
