@@ -8,6 +8,11 @@ The system consists of three independent CAN nodes:
 * Indicator Node
   
 The Main Node receives fuel information from the Fuel Node, monitors engine temperature using a DS18B20 sensor, and sends indicator commands to the Indicator Node.
+
+# Project Objective
+
+To design and implement a distributed automotive dashboard system using the CAN protocol, enabling reliable real-time communication between multiple embedded nodes for monitoring vehicle parameters and controlling indicators.
+
 # Block diagram
 <img width="643" height="459" alt="image" src="https://github.com/user-attachments/assets/c1a458f1-651b-46d0-87d2-5731203adf7d" />
 
@@ -55,7 +60,13 @@ Fuel Node → CAN Bus → Main Node → CAN Bus → Indicator Node
 * Push Buttons
 * LED Array
 * CAN Bus Network
-  
+
+# CAN Communication Summary
+
+Source Node	Destination Node	CAN ID	Data
+Fuel Node	Main Node	0x01	Fuel Percentage
+Main Node	Indicator Node	0x11	L / R / O
+
 # Indicator Commands
 
 | CAN ID | Command | Description        |
