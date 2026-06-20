@@ -56,9 +56,9 @@ Fuel Node → CAN Bus → Main Node → CAN Bus → Indicator Node
 * MCP2551 CAN Transceiver
 * DS18B20 Temperature Sensor
 * 20x4 LCD Display
-* Fuel Sensor / Potentiometer
+* Fuel Sensor 
 * Push Buttons
-* LED Array
+* LEDs
 * CAN Bus Network
 
 # CAN Communication Summary
