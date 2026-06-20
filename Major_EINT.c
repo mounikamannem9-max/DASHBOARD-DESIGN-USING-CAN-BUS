@@ -46,14 +46,11 @@ int main()
 {
     /* Initialize CAN Controller */
     Init_CAN1();
-
     /* Configure LEDs as Output */
     IODIR1 |= LED_MASK;
-
     /* Turn OFF all LEDs initially
        (Active-Low LEDs) */
     IOSET1 = LED_MASK;
-
     while (1)
     {
         /*********************************************************************
@@ -62,10 +59,8 @@ int main()
         if (C1GSR & (1 << 0))      // Check Receive Buffer Status
         {
             CAN1_Rx(&rxF);         // Receive CAN Frame
-
             /* Release Receive Buffer */
             C1CMR = (1 << 2);
-
             /* Process Indicator Messages */
             if (rxF.ID == 0x11)
             {
@@ -76,12 +71,10 @@ int main()
                     /* Start animation from rightmost LED */
                     pos = 7;
                 }
-
                 /* Right Indicator Command */
                 else if (rxF.Data1 == 'R')
                 {
                     indicator = RIGHT;
-
                     /* Start animation from leftmost LED */
                     pos = 0;
                 }
@@ -113,7 +106,6 @@ int main()
         delay_ms(50);
     }
 }
-
 /*****************************************************************************
  * Function : blink_right_step()
  * Description:
@@ -135,7 +127,6 @@ void blink_right_step(void)
     if (pos >= 8)
         pos = 0;
 }
-
 /*****************************************************************************
  * Function : blink_left_step()
  * Description:
