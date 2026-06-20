@@ -63,9 +63,9 @@ Fuel Node → CAN Bus → Main Node → CAN Bus → Indicator Node
 
 # CAN Communication Summary
 
-Source Node	Destination Node	CAN ID	Data
-Fuel Node	Main Node	0x01	Fuel Percentage
-Main Node	Indicator Node	0x11	L / R / O
+# Source Node	  DestinationNode	   CAN ID    	Data
+Fuel Node	        Main Node	        0x01	  Fuel Percentage
+Main Node	        Indicator Node	  0x11	   L / R / O
 
 # Indicator Commands
 
