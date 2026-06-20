@@ -10,18 +10,17 @@ void Init_CAN1(void)
 {
     //cfg p0.25 as CAN1_RX pin(RD1)
     PINSEL1=(1<<((25-16)*2));
-//      CfgPortPinFunc(0,25,RD1_PIN_0_25);
+    // CfgPortPinFunc(0,25,RD1_PIN_0_25);
     //Reset CAN1 controller
     C1MOD|=1<<RM_BIT;
     //all received messages are accepted
-          AFMR&=~(1<<AccOFF_BIT);
+    AFMR&=~(1<<AccOFF_BIT);
     AFMR|=(1<<AccBP_BIT);
-          //Set baud Rate for CAN
+    //Set baud Rate for CAN
     C1BTR=BTR_LVAL;
     //Enable CAN1 controller
     C1MOD&=~(1<<RM_BIT);
 }
-
 void CAN1_Tx(CANF txF)
 {
    // Checking that the TX buffer is empty
@@ -34,7 +33,7 @@ void CAN1_Tx(CANF txF)
     //Check whether Data/Remote Frame to Transmit
    if(txF.BFV.RTR!=1)
    {
-     //if D Frame,wr to data transmit buffers
+           //if D Frame,wr to data transmit buffers
            C1TDA1= txF.Data1; /*bytes 1-4 */
            C1TDB1= txF.Data2; /*bytes 5-8*/
    }
@@ -43,7 +42,6 @@ void CAN1_Tx(CANF txF)
    //wait until tx complete
    while(((C1GSR>>TCS1_BIT)&1)==0);
 }
-
 void CAN1_Rx(CANF *rxF)
 {
   //wait for CAN frame recv status
