@@ -4,12 +4,11 @@
 #define D 1<<15		 //1-WIRE DATA LINE
 #define R (IOPIN0&(1<<15))
 
-
 /**RESET FUNCTION DEFINATION FOR DS18B20**/
 unsigned char ResetDS18b20(void)
 {
 	unsigned int  presence; 
-  IODIR0 |= D;
+    IODIR0 |= D;
 	IOPIN0 |= D;	
 	delay_us(1); //////////////1Us
 	IOPIN0 &= ~(D);
@@ -83,16 +82,16 @@ int ReadTemp(void)
 	unsigned char n,buff[2];
 	int temp;
 	ResetDS18b20();	  //RESET DS18B20
-  WriteByte(0xcc);   // skip ROM
-  WriteByte(0x44);   // perform temperature conversion
-  while (ReadByte()==0xff); // wait for conversion complete	
+    WriteByte(0xcc);   // skip ROM
+    WriteByte(0x44);   // perform temperature conversion
+    while (ReadByte()==0xff); // wait for conversion complete	
 	ResetDS18b20();
 	WriteByte(0xcc);   // skip ROM
 	WriteByte(0xbe);    // read the result
-  for(n=0;n<2;n++) // read 9 bytes but, use only one byte
-  {
+    for(n=0;n<2;n++) // read 9 bytes but, use only one byte
+    {
       buff[n]=ReadByte();  // read DS1820
-  }
+    }
 	temp=buff[1];
 	temp=temp<<8;
 	temp=temp|buff[0];
